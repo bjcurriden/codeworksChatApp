@@ -1,4 +1,8 @@
 $(document).ready(() => {
+    $('input').on('mouseenter mouseleave', () => {
+        $('input').toggleClass('inputClicked')
+    })
+
     let counter = 0;
     // code inspired by WebStylePress Simple Chat Box Simulation using jQuery | jQuery Tutorial
     $('form').submit(function (e) {
@@ -46,7 +50,7 @@ const getResponse = (num) => {
             return "That's great to hear. Nice weather we're having, eh?"
             break;
         case 2:
-            return "That's how I feel about the weather, too!"
+            return `I feel ${$('input').val()} about the weather, too!`
             break;
         case 3:
             return "Do you want to hear a story?"
@@ -73,7 +77,7 @@ const getResponse = (num) => {
             return "I feel like I'm getting a little nonsensical"
             break;
         case 11:
-            return "HIDEY HOOO"
+            return `Look at this crab! <img src="./pics/crab.jpeg" title="a crab" />`
             break;
         case 12:
             return "How many Jean Claude Van Dam movies have you seen? I've seen a lot"
