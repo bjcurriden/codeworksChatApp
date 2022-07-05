@@ -10,43 +10,44 @@ h1 {
     text-align: center;
 }
 .msgBox{
-    
+
     display: flex;
+    justify-content: center;
     border-radius: 12px;
     margin: 50px;
-    background-color: rgb(253, 253, 251);
+    background-color: rgba(201, 178, 212, 0.548);
     height: 60%;
-    width: auto;
+    width: 300px;
     overflow-y: scroll;
-    justify-content: center;
+
 }
 
 
 .message {
     display: flex;
     justify-content: flex-start;
+    justify-self: left;
     flex-direction: column;
     overflow-x: scroll;
     margin: 20px;
-    margin-bottom: 128px;
     background-color: rgb(219, 136, 136);
     width: 200px;
     height: auto;
-    padding: 1rem;
-    align-items: flex-start;
-    border-radius: 5px;
+    padding: 1rem; 
+    border-radius: 5px; 
 }
 
 .robotmessage {    
+
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    justify-self: flex-end;
+    justify-self: right;
+    overflow-x: scroll;
     margin: 20px;
     background-color: rgb(81, 31, 175);
     width: 200px;
     height: auto;
-    margin-top: 128px;
     padding: 1rem;
     align-items: flex-end;
     border-radius: 5px;
