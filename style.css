@@ -3,10 +3,11 @@ html {
 }
 body {
     background-image: linear-gradient(to bottom right, rgb(219, 136, 136), rgb(81, 31, 175));
+    /* overflow-y: hidden; */
     display:flex;
     flex-direction: column;
     height: 100%;
-    max-height: 1000px;
+    max-height: 100%;
     align-items: center;
     flex: 1 1 auto;
 }
@@ -15,11 +16,10 @@ body {
     position: fixed; 
     top: 0; 
     left: 0; 
-    background-color: rgb(219, 136, 136); 
+    background-color: rgba(219, 136, 136, 0.192); 
     width: 100%; 
     margin: 0 auto;
     text-align: center;
-    height: 50px;
 }
 .bannerContent {
     display: flex;
@@ -28,6 +28,10 @@ body {
     width: 800px; 
     margin: 0 auto; 
     padding: 10px; 
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 12px;
 }
 
 h1 {
@@ -39,11 +43,13 @@ img {
 }
 
 .msgBox{
-
+    position: static;
+    top: 20px;
     display: flex;
     justify-content: center;
     border-radius: 12px;
     margin: 50px;
+    margin-top:100px;
     background-color: rgba(201, 178, 212, 0.548);
     min-height: 300px;
     max-height: 750px;
@@ -59,11 +65,14 @@ img {
     flex-direction: column;
     overflow-x: scroll;
     margin: 20px;
-    background-color: rgb(219, 136, 136);
+    background-color: rgb(165, 56, 123);
     width: 200px;
     height: auto;
     padding: 1rem; 
     border-radius: 5px; 
+    color: whitesmoke;
+    font-family: 'Inconsolata', monospace;
+    
 }
 
 .robotmessage {    
@@ -71,32 +80,39 @@ img {
     flex-direction: column;
     justify-content: flex-end;
     justify-self: right;
-    overflow-x: scroll;
+    flex-wrap: wrap;
+    overflow-x: auto;
     margin: 20px;
-    background-color: rgb(81, 31, 175);
+    background-color: rgb(120, 82, 189);
     width: 200px;
     height: auto;
     padding: 1rem;
     align-items: flex-end;
     border-radius: 5px;
+    color: whitesmoke;
+    font-family: 'Inconsolata', monospace;
 }
 
 .time {
     font-size: smaller;
-    color: gray;
-    
+    color: rgb(182, 198, 214);
+    font-family: 'Rajdhani', sans-serif;
 }
    
 .robotTime {
     font-size: smaller;
-    color: gray;
+    color: rgb(182, 198, 214);
     justify-content: flex-end;
-    
+    font-family: 'Rajdhani', sans-serif;
 }
 #userInput {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+
+#userSub {
+    padding-left: 12px;
 }
 
 
@@ -107,20 +123,41 @@ input {
     margin: 10px;
     width: 300px;
     margin-bottom: 75px;
-
+    font-family: 'Inconsolata', monospace;
+    outline-color: rgb(219, 136, 136);
 }
 
 .inputClicked{
     background-color: rgba(255, 255, 255, 0.918);
+    outline-color:rgba(219, 136, 136,);
 }
+
+.arrow{
+    height: 48px;
+    width: 48px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.arrow :hover {
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    margin-bottom: 24px;
+    margin-right: 24px;
+    
+}
+.largeArrow {}
 
 .footer{
     display: flex;
-    position: fixed; 
     align-items: center;
+    position: fixed;
     bottom: 0; 
     left: 0; 
-    background-color: rgb(81, 31, 175); 
+    background-color: rgba(81, 31, 175, 0.192); 
     width: 100%; 
     margin: 0 auto;
     height: 50px;
@@ -128,6 +165,11 @@ input {
 .footerContent {
     display: flex;
     justify-content: flex-end;
-    
+    font-family: 'Inconsolata', monospace;
+    font-weight: 200;
     margin: 0 auto; 
+}
+
+.hide {
+    display: none;
 }

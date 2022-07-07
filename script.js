@@ -7,16 +7,17 @@ $(document).ready(() => {
     // code inspired by WebStylePress Simple Chat Box Simulation using jQuery | jQuery Tutorial
     $('form').submit(function (e) {
 
+        //prevent refresh
         e.preventDefault();
 
         let getMessage = $('input').val();
 
         if (getMessage) {
-
+            //add user input to a message class and add the time, then append the message to the msgBox
             let newMessage = "<p class = 'message'>" + getMessage + '<span class = "time">' + '<br>' + theTime[4] + '</span>' + "</p>";
 
             $('.msgBox .inner').append(newMessage);
-            //create a loop with a counter where if the counter is below a certain number
+            //create a loop with a counter where if the counter is below 11
             //it responds in order, otherwise, it'll start throwing out random responses
             const randomNumber = Math.floor(Math.random() * (20 - 10 + 1)) + 10
 
@@ -38,7 +39,12 @@ $(document).ready(() => {
         }
         counter++
     })
-
+// Arrow gets larger when hovered over, shows or hides footer when clicked
+    $('.arrow').on('click', ()=>{
+        $('.footer').toggleClass('hide')
+        $('#up').toggle()
+        $('#down').toggle()
+    })
 })
 
 const getResponse = (num) => {
@@ -92,7 +98,7 @@ const getResponse = (num) => {
             return "What's your favorite movie?"
             break;
         case 16:
-            return 'AHHHHHHHHHHHHHHH<br>HHHHHHHHHHHHHHHH<br>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+            return 'AHHHHHHHHHHHHHHH<br>HHHHHHHHHHHHHHHH<br>!!!!!!!!!!!!!!!!'
             break;
         case 17:
             return "Do you like me?"
