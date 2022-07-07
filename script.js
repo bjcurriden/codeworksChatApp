@@ -5,7 +5,7 @@ $(document).ready(() => {
 
     let counter = -1;
     // code inspired by WebStylePress Simple Chat Box Simulation using jQuery | jQuery Tutorial
-    $('form').submit(function (e) {
+    $('form').submit(function (e) { 
 
         //prevent refresh
         e.preventDefault();
@@ -14,7 +14,7 @@ $(document).ready(() => {
         if (getMessage) {
 
             //add user input to a message class and add the time, then append the message to the msgBox
-            let newMessage = "<p class = 'message'>" + getMessage + '<span class = "time">' + '<br>' + theTime[4] + '</span>' + "</p>";
+            let newMessage = "<p class = 'message'>" + getMessage + '<span class = "time">' + '<br>'+ '<strong>'+theTime[2] + ' ' + theTime[1] + ' ' + theTime[3] + '</strong> at ' + theTime[4] + "</p>";
 
             $('.msgBox .inner').append(newMessage);
 
@@ -32,10 +32,10 @@ $(document).ready(() => {
                 let chatResponse = ''
 
                 if (counter <= 10) {
-                    chatResponse = "<p class = 'robotmessage'>" + getResponse(counter) + '<span class = "robotTime">' + '<br>' + theTime[4] + '</span>' + "</p>";
+                    chatResponse = "<p class = 'robotmessage'>" + getResponse(counter) + '<span class = "robotTime">' + '<br>'+ '<strong>'+theTime[2] + ' ' + theTime[1] + ' ' + theTime[3] + '</strong> at ' + theTime[4]  + '</span>' + "</p>";
                     $('.msgBox .inner').append(chatResponse);
                 } else {
-                    chatResponse = "<p class = 'robotmessage'>" + getResponse(randomNumber) + '<span class = "robotTime">' + '<br>' + theTime[4] + '</span>' + "</p>"
+                    chatResponse = "<p class = 'robotmessage'>" + getResponse(randomNumber) + '<span class = "robotTime">' + '<br>'+ '<strong>'+theTime[2] + ' ' + theTime[1] + ' ' + theTime[3] + '</strong> at ' + theTime[4] + '</span>' + "</p>"
                     $('.msgBox .inner').append(chatResponse);
                 }
                 //remove the "thinking" ellipses
@@ -126,3 +126,5 @@ $(document).ready(() => {
 
 
 let theTime = new Date().toString().split(' ')
+
+
