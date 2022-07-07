@@ -3,7 +3,7 @@ $(document).ready(() => {
         $('input').toggleClass('inputClicked')
     })
 
-    let counter = 0;
+    let counter = -1;
     // code inspired by WebStylePress Simple Chat Box Simulation using jQuery | jQuery Tutorial
     $('form').submit(function (e) {
 
@@ -13,34 +13,43 @@ $(document).ready(() => {
         let getMessage = $('input').val();
 
         if (getMessage) {
+
             //add user input to a message class and add the time, then append the message to the msgBox
             let newMessage = "<p class = 'message'>" + getMessage + '<span class = "time">' + '<br>' + theTime[4] + '</span>' + "</p>";
 
             $('.msgBox .inner').append(newMessage);
+
+            //Add an elipses while the bot "types"          
+            $('.msgBox .inner').append("<p class = 'thinking'> ... </p>")
+            $('.msgBox').scrollTop($('.msgBox')[0].scrollHeight)
+            $('input').val('')
+
             //create a loop with a counter where if the counter is below 11
             //it responds in order, otherwise, it'll start throwing out random responses
             const randomNumber = Math.floor(Math.random() * (20 - 10 + 1)) + 10
+            
+            //delay a response to simulate the bot typing.
+            setTimeout(function () {
+                let chatResponse = ''
+
+                if (counter <= 10) {
+                    chatResponse = "<p class = 'robotmessage'>" + getResponse(counter) + '<span class = "robotTime">' + '<br>' + theTime[4] + '</span>' + "</p>";
+                    $('.msgBox .inner').append(chatResponse);
+                } else {
+                    chatResponse = "<p class = 'robotmessage'>" + getResponse(randomNumber) + '<span class = "robotTime">' + '<br>' + theTime[4] + '</span>' + "</p>"
+                    $('.msgBox .inner').append(chatResponse);
+                }
+                //remove the "thinking" ellipses
+                $('.thinking').remove()
 
 
-            let chatResponse = ''
-
-            if (counter <= 10) {
-                chatResponse = "<p class = 'robotmessage'>" + getResponse(counter) + '<span class = "robotTime">' + '<br>' + theTime[4] + '</span>' + "</p>";
-                $('.msgBox .inner').append(chatResponse);
-            } else {
-                chatResponse = "<p class = 'robotmessage'>" + getResponse(randomNumber) + '<span class = "robotTime">' + '<br>' + theTime[4] + '</span>' + "</p>"
-                $('.msgBox .inner').append(chatResponse);
-            }
-
-
-            $('input').val('')
-
-            $('.msgBox').scrollTop($('.msgBox')[0].scrollHeight)
+                $('.msgBox').scrollTop($('.msgBox')[0].scrollHeight)
+            }, 500)
         }
         counter++
     })
-// Arrow gets larger when hovered over, shows or hides footer when clicked
-    $('.arrow').on('click', ()=>{
+    // Arrow gets larger when hovered over, shows or hides footer when clicked
+    $('.arrow').on('click', () => {
         $('.footer').toggleClass('hide')
         $('#up').toggle()
         $('#down').toggle()

@@ -1,55 +1,55 @@
 html {
     height: 100%;
 }
+
 body {
     background-image: linear-gradient(to bottom right, rgb(219, 136, 136), rgb(81, 31, 175));
-    /* overflow-y: hidden; */
-    display:flex;
+    overflow-y: hidden;
+    display: flex;
     flex-direction: column;
     height: 100%;
     max-height: 100%;
     align-items: center;
     flex: 1 1 auto;
 }
-.banner{
+
+.banner {
     display: flex;
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    background-color: rgba(219, 136, 136, 0.192); 
-    width: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(219, 136, 136, 0.192);
+    width: 100%;
     margin: 0 auto;
     text-align: center;
 }
+
 .bannerContent {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 800px; 
-    margin: 0 auto; 
-    padding: 10px; 
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
     font-family: 'Inconsolata', monospace;
     font-weight: 700;
     font-size: 24px;
     padding: 12px;
-}
-
-h1 {
-    text-align: center;
+    color: rgba(0, 0, 0, 0.849);
 }
 
 img {
     height: 100px;
 }
 
-.msgBox{
+.msgBox {
     position: static;
     top: 20px;
     display: flex;
     justify-content: center;
     border-radius: 12px;
     margin: 50px;
-    margin-top:100px;
+    margin-top: 100px;
     background-color: rgba(201, 178, 212, 0.548);
     min-height: 300px;
     max-height: 750px;
@@ -68,14 +68,33 @@ img {
     background-color: rgb(165, 56, 123);
     width: 200px;
     height: auto;
-    padding: 1rem; 
-    border-radius: 5px; 
+    padding: 1rem;
+    border-radius: 5px;
     color: whitesmoke;
     font-family: 'Inconsolata', monospace;
-    
+
 }
 
-.robotmessage {    
+.robotmessage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-self: right;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    margin: 20px;
+    background-color: rgb(120, 82, 189);
+    width: 200px;
+    height: auto;
+    padding: 1rem;
+    align-items: flex-end;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-family: 'Inconsolata', monospace;
+
+}
+
+.thinking {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -98,13 +117,14 @@ img {
     color: rgb(182, 198, 214);
     font-family: 'Rajdhani', sans-serif;
 }
-   
+
 .robotTime {
     font-size: smaller;
     color: rgb(182, 198, 214);
     justify-content: flex-end;
     font-family: 'Rajdhani', sans-serif;
 }
+
 #userInput {
     display: flex;
     justify-content: center;
@@ -115,24 +135,32 @@ img {
     padding-left: 12px;
 }
 
-
 input {
     border-radius: 15px;
     border-style: hidden;
     background-color: rgba(255, 255, 255, 0.548);
     margin: 10px;
+    height: 36px;
     width: 300px;
     margin-bottom: 75px;
     font-family: 'Inconsolata', monospace;
     outline-color: rgb(219, 136, 136);
+    font-size: 16px;
 }
 
-.inputClicked{
+::-webkit-input-placeholder {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.925);
+    text-align: center;
+}
+
+.inputClicked {
     background-color: rgba(255, 255, 255, 0.918);
-    outline-color:rgba(219, 136, 136,);
+    outline-color: rgba(219, 136, 136, );
 }
 
-.arrow{
+.arrow {
     height: 48px;
     width: 48px;
     position: fixed;
@@ -147,27 +175,29 @@ input {
     width: 60px;
     margin-bottom: 24px;
     margin-right: 24px;
-    
-}
-.largeArrow {}
 
-.footer{
+}
+
+.footer {
     display: flex;
     align-items: center;
     position: fixed;
-    bottom: 0; 
-    left: 0; 
-    background-color: rgba(81, 31, 175, 0.192); 
-    width: 100%; 
+    bottom: 0;
+    left: 0;
+    background-color: rgba(81, 31, 175, 0.192);
+    width: 100%;
     margin: 0 auto;
     height: 50px;
+    font-size: small;
+    color: lightgray
 }
+
 .footerContent {
     display: flex;
     justify-content: flex-end;
     font-family: 'Inconsolata', monospace;
     font-weight: 200;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .hide {
