@@ -44,6 +44,8 @@ h1 {
     font-weight: 700;
     font-size: 36px;
     margin: 2px 8px 4px 8px;
+    color: rgba(238, 229, 104, 0.808);
+    letter-spacing: .6rem;
 }
 
 h2 {
@@ -51,6 +53,11 @@ h2 {
     font-weight: 400;
     font-size: 15px;
     margin: 3px 5px 5px 5px;
+}
+
+.bot {
+    font-weight: 300;
+
 }
 
 img {
