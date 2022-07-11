@@ -10,7 +10,9 @@ The project has a number of features to simulate a real chat function. Each resp
 The first 11 responses are delivered in a prescribed order. After the 11th message, there are 20 messages that are delivered randomly via a random number generator.
 
 Each message is sent and delivered with an accurate timestamp.
+
 The portion of the screen containing the messages scrolls to the bottom after each message is sent and delivered.
+
 DOM interaction is done using JQuery.
 
 Some lines of code, marked by an asterisk comment in the javascript, were learned from this tutorial from WebStylePress:
