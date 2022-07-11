@@ -20,7 +20,7 @@ $(document).ready(() => {
 
             $('.msgBox .inner').append(newMessage);
 
-            //Add an elipses while the bot "types"          
+            //Add elipses while the bot "types"          
             $('.msgBox .inner').append("<p class = 'thinking'> ... </p>")
             $('.msgBox').scrollTop($('.msgBox')[0].scrollHeight)   //*
 
@@ -165,7 +165,7 @@ $(document).ready(() => {
         $('input').addClass('selected')
     })
 
-    // This code found stack overflow https://stackoverflow.com/questions/26672241/remove-class-after-click-outside-the-div
+    // This code found stackon  overflow https://stackoverflow.com/questions/26672241/remove-class-after-click-outside-the-div
     // Removes the .selected class from input box when clicked away from
     $(document).on("click", (function (e) {
         if ($(e.target).is('input') === false) {
